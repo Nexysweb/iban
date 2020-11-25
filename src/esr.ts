@@ -1,5 +1,4 @@
 // taken from https://gitlab.com/nexyserp/erpback/-/blob/dev/app/utils/Bvr.scala
-import Nutils from "@nexys/utils";
 
 /**
  * helper object for BVr
@@ -27,9 +26,9 @@ export const stringToInt = (s: string): number[] =>
         return i;
       }
 
-      return undefined;
+      return -1;
     })
-    .filter(Nutils.array.notEmpty);
+    .filter(x => x >= 0);
 
 /**
  * calculates last number if bvr (checksum)
