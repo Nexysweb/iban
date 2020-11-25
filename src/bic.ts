@@ -1,3 +1,4 @@
+// taken from https://gitlab.com/nexyserp/erpback/-/blob/dev/app/utils/Bic.scala
 /**
  * BIC/SWIFT after ISO_9362
  * @see https://en.wikipedia.org/wiki/ISO_9362

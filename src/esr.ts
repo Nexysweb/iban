@@ -1,4 +1,5 @@
-import Nutils, { string } from "@nexys/utils";
+// taken from https://gitlab.com/nexyserp/erpback/-/blob/dev/app/utils/Bvr.scala
+import Nutils from "@nexys/utils";
 
 /**
  * helper object for BVr

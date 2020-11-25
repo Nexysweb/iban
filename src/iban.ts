@@ -1,3 +1,5 @@
+// taken from https://gitlab.com/nexyserp/erpback/-/blob/dev/app/utils/Iban.scala
+
 export const sanitize = (iban: string) => iban.replace(/\s/g, "");
 
 /**
