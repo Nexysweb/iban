@@ -12,7 +12,7 @@ jobs:
         with:
           node-version: 13
       - run: yarn
-      - run: yarn buildpackage
+      - run: yarn build
       - run: yarn test
       - name: Publish package
         run: |
