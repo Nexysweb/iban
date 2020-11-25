@@ -64,43 +64,7 @@ test("isRefNumberValid", () => {
 });
 
 /*
-    "" in {
-     
 
-     
-    }
-
-    "isRefNumberValid" in {
-      val s1 = "12 34000 00000 00000 00000 00016"
-      isRefNumberValid(s1) mustEqual (true)
-
-      
-      isRefNumberValid(s2) mustEqual (false)
-
-      val s3 = "12 34000 00000 00000 00000 00018"
-      isRefNumberValid(s3) mustEqual (false)
-
-      val s4 = "12 34000 00000 00000 00000 00019"
-      isRefNumberValid(s4) mustEqual (false)
-
-      val s5 = "12 34000 00000 00000 00000 00010"
-      isRefNumberValid(s5) mustEqual (false)
-
-      val s6 = "12 34000 00000 00000 00000 00011"
-      isRefNumberValid(s6) mustEqual (false)
-
-      val s7 = "12 34000 00000 00000 00000 00012"
-      isRefNumberValid(s7) mustEqual (false)
-
-      val s8 = "12 34000 00000 00000 00000 00013"
-      isRefNumberValid(s8) mustEqual (false)
-
-      val s9 = "12 34000 00000 00000 00000 00014"
-      isRefNumberValid(s9) mustEqual (false)
-
-      val s0 = "12 34000 00000 00000 00000 00015"
-      isRefNumberValid(s0) mustEqual (false)
-    }
 
     "is post Account" in {
       val s1 = "01-000145-6"
