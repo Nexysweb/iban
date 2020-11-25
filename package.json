@@ -1,6 +1,6 @@
 {
   "name": "@nexys/iban",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "license": "ISC",
   "dependencies": {
     "@nexys/utils": "^3.9.13",
@@ -30,7 +30,6 @@
   "files": [
     "dist/*"
   ],
-
   "browserslist": {
     "production": [
       ">0.2%",
