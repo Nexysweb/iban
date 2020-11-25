@@ -24,17 +24,13 @@
   },
   "scripts": {
     "build": "tsc",
-    "test": "jest",
-    "eject": "react-scripts eject"
+    "test": "jest"
   },
   "main": "dist/index.js",
   "files": [
-    "assets/*",
     "dist/*"
   ],
-  "eslintConfig": {
-    "extends": "react-app"
-  },
+
   "browserslist": {
     "production": [
       ">0.2%",
