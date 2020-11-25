@@ -41,8 +41,8 @@ export const modulo10CheckSum = (s: string): number => {
 
   // create list of integers from string
   // prefix the list with zero
-  const ss = stringToInt(s);
-  const intList: number[] = [0, ...ss];
+
+  const intList: number[] = [0, ...stringToInt(s)];
 
   // go trhough the list and return 10- table(idx)
   const rResult = intList.reduce((a, b) => {
@@ -53,54 +53,8 @@ export const modulo10CheckSum = (s: string): number => {
     return table[idx];
   });
 
-  return 10 - (rResult % 10); // % 10 required here, in order not to return > 9 !
+  return (10 - rResult) % 10; // % 10 required here, in order not to return > 9 !
 };
-
-// Takes a credit card string value and returns true on valid number
-const modulo10CheckSum2 = (value: string): number => {
-  // Accept only digits, dashes or spaces
-  if (/[^0-9-\s]+/.test(value)) {
-    throw Error("must be only numbers based");
-  }
-
-  // The Luhn Algorithm. It's so pretty.
-  let nCheck = 0,
-    bEven = false;
-  value = value.replace(/\D/g, "");
-
-  for (var n = value.length - 1; n >= 0; n--) {
-    var cDigit = value.charAt(n),
-      nDigit = parseInt(cDigit, 10);
-
-    if (bEven && (nDigit *= 2) > 9) nDigit -= 9;
-
-    nCheck += nDigit;
-    bEven = !bEven;
-  }
-
-  return nCheck % 10; //== 0;
-};
-
-/**
- * Luhn algorithm in JavaScript: validate credit card number supplied as string of numbers
- * @author ShirtlessKirk. Copyright (c) 2012.
- * @license WTFPL (http://www.wtfpl.net/txt/copying)
- */
-var modulo10CheckSum3 = (function (arr) {
-  return (ccNum: any) => {
-    var len = ccNum.length,
-      bit = 1,
-      sum = 0,
-      val;
-
-    while (len) {
-      val = parseInt(ccNum.charAt(--len), 10);
-      sum += (bit ^= 1) ? arr[val] : val;
-    }
-
-    return sum && sum % 10;
-  };
-})([0, 2, 4, 6, 8, 1, 3, 5, 7, 9]);
 
 /**
  * format reference number
@@ -128,7 +82,7 @@ export const isRefNumberValid = (s: string): boolean => {
 
     //return true;
     return (
-      modulo10CheckSum3(s.slice(0, -1)) == t[t.length - 1] &&
+      modulo10CheckSum(s.slice(0, -1)) == t[t.length - 1] &&
       isRefNumberWithCorrectLength(s)
     );
   } catch (err) {

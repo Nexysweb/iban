@@ -4,8 +4,6 @@
  * @param {[type]} bic: String [description]
  */
 
-import { patterns } from "pdfkit/js/page";
-
 // cleans input
 export const sanitize = (bic: string): string =>
   bic.replace(/[^0-9A-Z]/g, "").toUpperCase();
