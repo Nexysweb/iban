@@ -63,26 +63,22 @@ test("isRefNumberValid", () => {
   expect(Bvr.isRefNumberValid(s0)).toEqual(false);
 });
 
-/*
+test("ispost acccount", () => {
+  const s1 = "01-000145-6";
+  expect(Bvr.isAccount(s1)).toEqual(true);
 
+  const s2 = "01-1245-1";
+  expect(Bvr.isAccount(s2)).toEqual(false);
 
-    "is post Account" in {
-      val s1 = "01-000145-6"
-      isAccount(s1) mustEqual (true)
+  const s3 = "01-084798-7";
+  expect(Bvr.isAccount(s3)).toEqual(true);
 
-      val s2 = "01-1245-1"
-      isAccount(s2) mustEqual (false)
+  const s4 = "0a-12451-1";
+  expect(Bvr.isAccount(s4)).toEqual(false);
 
-      val s3 = "01-084798-7"
-      isAccount(s3) mustEqual (true)
+  const s5 = "01-036888-3";
+  expect(Bvr.isAccount(s5)).toEqual(true);
 
-      val s4 = "0a-12451-1"
-      isAccount(s4) mustEqual (false)
-
-      val s5 = "01-036888-3"
-      isAccount(s5) mustEqual(true)
-
-      val s6 = "01-16905-5"
-      isAccount(s5) mustEqual (true)
-    }
- */
+  const s6 = "01-016905-5";
+  expect(Bvr.isAccount(s6)).toEqual(true);
+});

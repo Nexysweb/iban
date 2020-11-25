@@ -125,7 +125,7 @@ const isAccountCheck = (s: string): boolean => {
   }
 };
 
-const isAccount = (s: string): boolean =>
+export const isAccount = (s: string): boolean =>
   isAccountRightFormat(s) && isAccountCheck(s);
 
 /**
