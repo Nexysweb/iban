@@ -9,6 +9,11 @@ export const sanitize = (iban: string) => iban.replace(/\s/g, "");
 const pattern: RegExp = /[A-Z]{2,2}[0-9]{2,2}[a-zA-Z0-9]{1,30}/;
 
 /**
+ * formats iban string
+ */
+export const format = (iban:string):string => iban;
+
+/**
  * hash table of country prefix and asssociated length
  */
 const ibanLen = new Map([
