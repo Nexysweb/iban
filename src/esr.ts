@@ -8,7 +8,27 @@
 /**
  * length of of reference number (without checksum)
  */
-const refNrLength = 26;
+export const refNrLength = 27;
+export const generate = (index: number, template?: string): string => {
+  if (!template) {
+  }
+
+  const s: string = template || Array(refNrLength).fill(0).join("");
+
+  return generateFromTemplate(s, index);
+};
+
+export const generateFromTemplate = (
+  template: string,
+  index: number
+): string => {
+  const sIndex = String(index);
+
+  const is = template.slice(0, refNrLength - 1 - sIndex.length) + sIndex;
+  const m = modulo10CheckSum(is);
+
+  return is + m;
+};
 
 /**
  *  create list of integers from string, remove all non digits (hence flatMap)
@@ -28,7 +48,7 @@ export const stringToInt = (s: string): number[] =>
 
       return -1;
     })
-    .filter(x => x >= 0);
+    .filter((x) => x >= 0);
 
 /**
  * calculates last number if bvr (checksum)
@@ -99,7 +119,7 @@ export const isRefNumberWithCorrectLength = (s: string): boolean => {
   try {
     const t = stringToInt(s);
 
-    return t.length == 27;
+    return t.length == refNrLength;
   } catch (err) {
     return false;
   }

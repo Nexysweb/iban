@@ -1,5 +1,22 @@
 import * as Bvr from "./esr";
 
+test("generate from template", () => {
+  const s = "76 54321 23400 00000 00000 00015".replace(/ /g, "");
+  const idx = 678;
+  expect(s.length).toEqual(Bvr.refNrLength);
+  const r = Bvr.generateFromTemplate(s, idx);
+  expect(r).toEqual("765432123400000000000006787");
+  expect(Bvr.isRefNumberValid(r)).toEqual(true);
+  const r2 = Bvr.generate(idx, s);
+  expect(r2).toEqual(r);
+});
+
+test("generate ", () => {
+  const r = Bvr.generate(123);
+  expect(r).toEqual("000000000000000000000001236");
+  expect(Bvr.isRefNumberValid(r)).toEqual(true);
+});
+
 test("modulo10CheckSum", () => {
   const s1 = "123";
   expect(Bvr.modulo10CheckSum(s1)).toEqual(6);
