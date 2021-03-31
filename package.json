@@ -1,9 +1,8 @@
 {
   "name": "@nexys/iban",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "license": "ISC",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/jest": "^25.2.3",
     "jest": "^26.0.1",
